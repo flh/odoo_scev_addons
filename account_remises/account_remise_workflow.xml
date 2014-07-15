@@ -9,7 +9,7 @@
 
     <!-- Activities -->
     <record model="workflow.activity" id="act_remise_draft">
-      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="wkf_id" ref="wkf_scev_remise"/>
       <field name="flow_start">True</field>
       <field name="name">draft</field>
       <field name="kind">function</field>
@@ -17,14 +17,14 @@
     </record>
     
     <record model="workflow.activity" id="act_remise_confirmed">
-      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="wkf_id" ref="wkf_scev_remise"/>
       <field name="name">confirmed</field>
       <field name="kind">function</field>
       <field name="action">action_confirm()</field>
     </record>
     
     <record model="workflow.activity" id="act_remise_reconciled">
-      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="wkf_id" ref="wkf_scev_remise"/>
       <field name="flow_stop">True</field>
       <field name="name">reconciled</field>
       <field name="kind">function</field>
@@ -32,7 +32,7 @@
     </record>
     
     <record model="workflow.activity" id="act_remise_cancelled">
-      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="wkf_id" ref="wkf_scev_remise"/>
       <field name="name">activity.remise.cancelled</field>
       <field name="kind">function</field>
       <field name="action">action_cancel()</field>

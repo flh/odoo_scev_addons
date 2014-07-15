@@ -144,7 +144,7 @@ class remise(models.Model):
 
 class remise_line(models.Model):
     _name = 'scev.remise.line'
-    remise_id = fields.Many2one('scev.remise', required=True)
+    remise_id = fields.Many2one('scev.remise', string="Deposit", required=True, readonly=True)
     writer = fields.Char(string="Cheque writer", required=True)
     number = fields.Char(string="Cheque number", required=True)
     bank = fields.Char(string="Bank name", required=True)
