@@ -144,6 +144,7 @@ class remise(models.Model):
 
 class remise_line(models.Model):
     _name = 'scev.remise.line'
+    remise_id = fields.Many2one('scev.remise', required=True)
     writer = fields.Char(string="Cheque writer", required=True)
     number = fields.Char(string="Cheque number", required=True)
     bank = fields.Char(string="Bank name", required=True)
@@ -152,7 +153,6 @@ class remise_line(models.Model):
             digits=dp.get_precision('Account'))
     account_id = fields.Many2one('account.account', string="Account to credit", required=True)
     move_id = fields.Many2one('account.move.line', string="Account move line")
-    remise_id = fields.Many2one('scev.remise')
 
     @api.one
     @api.onchange('invoice_id')
