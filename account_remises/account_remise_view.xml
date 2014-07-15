@@ -45,5 +45,23 @@
         </form>
       </field>
     </record>
+    
+    <record id="action_account_remise_tree" model="ir.actions.act_window">
+      <field name="name">Cheques deposits</field>
+      <field name="res_model">scev.remise</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Click to create a new cheque deposit.
+        </p><p>
+          Blablabla.
+        </p>
+      </field>
+    </record>
+
+    <menuitem string="Cheque deposits" action="action_account_remise_tree"
+      id="menu_account_remise_tree" parent="account.menu_finance_bank_and_cash"
+      sequence="8"/>
   </data>
 </openerp>
