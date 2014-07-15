@@ -152,6 +152,7 @@ class remise_line(models.Model):
             digits=dp.get_precision('Account'))
     account_id = fields.Many2one('account.account', string="Account to credit", required=True)
     move_id = fields.Many2one('account.move.line', string="Account move line")
+    remise_id = fields.Many2one('scev.remise')
 
     @api.one
     @api.onchange('invoice_id')
