@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="remise_form">
+      <field name="name">scev.remise.form</field>
+      <field name="model">scev.remise</field>
+      <field name="arch" type="xml">
+        <form string="Cheques deposit">
+          <header>
+            <button name="remise_confirmed" states="draft" string="Confirm deposit" class="oe_highlight"/>
+            <button name="remise_cancelled" states="draft" string="Cancel"/>
+            <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,confirmed,reconciled"/>
+          </header>
+          <sheet string="Cheques deposit">
+            <h1>
+              <label string="Cheques deposit"/>
+              <field name="ref" class="oe_inline"/>
+            </h1>
+            <group>
+              <field name="date"/>
+              <field name="journal"/>
+              <field name="period"/>
+            </group>
+            <notebook colspan="4">
+              <page string="Cheques">
+                <field name="cheques" nolabel="1" widget="one2many_list">
+                  <tree string="Cheques" editable="bottom">
+                    <field name="invoice_id"/>
+                    <field name="writer"/>
+                    <field name="bank"/>
+                    <field name="number"/>
+                    <field name="account_id"/>
+                  </tree>
+                </field>
+                <group class="oe_subtotal_footer oe_right">
+                  <field name="nb_cheques"/>
+                  <field name="amount"/>
+                </group>
+              </page>
+              <page string="Account move">
+                <!-- XXX écrire les lignes de mouvement de compte -->
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

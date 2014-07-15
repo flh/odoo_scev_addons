@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="workflow" id="wkf_scev_remise">
+      <field name="name">scev.remise.basic</field>
+      <field name="osv">scev.remise</field>
+      <field name="on_create">True</field>
+    </record>
+
+    <!-- Activities -->
+    <record model="workflow.activity" id="act_remise_draft">
+      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="flow_start">True</field>
+      <field name="name">draft</field>
+      <field name="kind">function</field>
+      <field name="action">action_draft()</field>
+    </record>
+    
+    <record model="workflow.activity" id="act_remise_confirmed">
+      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="name">confirmed</field>
+      <field name="kind">function</field>
+      <field name="action">action_confirm()</field>
+    </record>
+    
+    <record model="workflow.activity" id="act_remise_reconciled">
+      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="flow_stop">True</field>
+      <field name="name">reconciled</field>
+      <field name="kind">function</field>
+      <field name="action">action_reconciled()</field>
+    </record>
+    
+    <record model="workflow.activity" id="act_remise_cancelled">
+      <field name="wkf_id" ref="wkf_account_remise"/>
+      <field name="name">activity.remise.cancelled</field>
+      <field name="kind">function</field>
+      <field name="action">action_cancel()</field>
+    </record>
+
+<!-- Transitions -->
+<record model="workflow.transition" id="t1">
+  <field name="act_from" ref="act_remise_draft"/>
+  <field name="act_to" ref="act_remise_confirmed"/>
+  <field name="signal">remise_confirmed</field>
+</record>
+
+<record model="workflow.transition" id="t2">
+  <field name="act_from" ref="act_remise_draft"/>
+  <field name="act_to" ref="act_remise_cancelled"/>
+  <field name="signal">remise_cancelled</field>
+</record>
+
+<record model="workflow.transition" id="t3">
+  <field name="act_from" ref="act_remise_confirmed"/>
+  <field name="act_to" ref="act_remise_reconciled"/>
+  <field name="condition">test_all_cashed()</field>
+</record>
+
+  </data>
+</openerp>
