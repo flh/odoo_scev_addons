@@ -150,8 +150,7 @@ class remise_line(models.Model):
     invoice_id = fields.Many2one('account.invoice', string="Invoice")
     amount = fields.Float(string="Amount", required=True,
             digits=dp.get_precision('Account'))
-    account_id = fields.Many2one('account.account', string="Account to
-            credit", required=True)
+    account_id = fields.Many2one('account.account', string="Account to credit", required=True)
     move_id = fields.Many2one('account.move.line', string="Account move line")
 
     @api.one
