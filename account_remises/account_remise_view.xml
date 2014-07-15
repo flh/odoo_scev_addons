@@ -38,7 +38,6 @@
                 </group>
               </page>
               <page string="Account move">
-                <!-- XXX écrire les lignes de mouvement de compte -->
               </page>
             </notebook>
           </sheet>
