@@ -7,15 +7,16 @@ class remise(models.Model):
     _name = 'scev.remise'
 
     date = fields.Date(string="Date", required=True,
-            readonly=True, states={'draft' : [('readonly'), False]},
+            readonly=True, states={'draft' : [('readonly', False)]},
             default=fields.Date.today)
 
     user = fields.Many2one('res.users', string="Creator", required=True,
-            readonly=True, states={'draft' : [('readonly'), False]},
+            readonly=True, states={'draft' : [('readonly', False)]},
             default=lambda self: self.env.user)
 
-    ref = fields.Char(string="Reference", required=True, size=64,
-            readonly=True, states={'draft' : [('readonly'), False]})
+    ref = fields.Char(string="Reference", required=True,
+            readonly=True, states={'draft' : [('readonly', False)]},
+            default=lambda self: '')
 
     journal = fields.Many2one('account.journal', string="Journal", required=True,
             readonly=True, states={'draft': [('readonly', False)]},
