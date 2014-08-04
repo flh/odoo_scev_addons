@@ -46,14 +46,17 @@ class remise(models.Model):
     @api.depends('cheques')
     def _compute_amount(self):
         if self.cheques:
-            self.nb_cheques = sum([c.amount for c in self.cheques])
+            self.amount = sum([c.amount for c in self.cheques])
         else:
-            self.nb_chques = 0
+            self.amount = 0
 
     @api.one
     @api.depends('cheques')
     def _compute_nb_cheques(self):
-        self.amount = len(self.cheques)
+        if self.cheques:
+            self.nb_cheques = len(self.cheques)
+        else:
+            self.nb_cheques = 0
 
     @api.one
     def _get_name(self):
