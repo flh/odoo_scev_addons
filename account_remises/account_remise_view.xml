@@ -49,7 +49,7 @@
       <field name="name=">scev.remise.tree</field>
       <field name="model">scev.remise</field>
       <field name="arch" type="xml">
-        <tree colors="blue:state=='draft';black:state=='reconciled';green:state=='confirmed';gray:state=='cancelled'">
+        <tree>
           <field name="date"/>
           <field name="ref"/>
           <field name="nb_cheques"/>
