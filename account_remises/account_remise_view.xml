@@ -29,7 +29,7 @@
                     <field name="writer"/>
                     <field name="bank"/>
                     <field name="number"/>
-                    <field name="account_id"/>
+                    <field name="amount"/>
                   </tree>
                 </field>
                 <group class="oe_subtotal_footer oe_right">
@@ -38,6 +38,18 @@
                 </group>
               </page>
               <page string="Account move">
+                <field name="move" nolabel="1">
+                  <form>
+                    <field name="line_id" nolabel="1" widget="one2many_list">
+                      <tree string="Moves">
+                        <field name="name"/>
+                        <field name="debit"/>
+                        <field name="credit"/>
+                        <field name="reconcile_id"/>
+                      </tree>
+                    </field>
+                  </form>
+                </field>
               </page>
             </notebook>
           </sheet>

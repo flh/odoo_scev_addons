@@ -153,7 +153,7 @@ class remise_line(models.Model):
     remise_id = fields.Many2one('scev.remise', string="Deposit", required=True, readonly=True)
     writer = fields.Char(string="Cheque writer", required=True)
     number = fields.Char(string="Cheque number", required=True)
-    bank = fields.Char(string="Bank name", required=True)
+    bank = fields.Many2one('res.bank', string="Bank name", required=True)
     invoice_id = fields.Many2one('account.invoice', string="Invoice")
     amount = fields.Float(string="Amount", required=True,
             digits=dp.get_precision('Account'))
