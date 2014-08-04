@@ -45,7 +45,7 @@
       </field>
     </record>
 
-    <record id="" model="ir.ui.view">
+    <record id="remise_tree" model="ir.ui.view">
       <field name="name=">scev.remise.tree</field>
       <field name="model">scev.remise</field>
       <field name="arch" type="xml">
