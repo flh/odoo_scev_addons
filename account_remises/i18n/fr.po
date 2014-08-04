@@ -1,0 +1,202 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_remises
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-04 07:30+0000\n"
+"PO-Revision-Date: 2014-08-04 07:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_remises
+#: model:ir.actions.act_window,help:account_remises.action_account_remise_tree
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"          Click to create a new cheque deposit.\n"
+"        </p><p>\n"
+"          Blablabla.\n"
+"        </p>\n"
+"      "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"          Cliquez pour créer une nouvelle remise de chèques.\n"
+"        </p><p>\n"
+"          Blablabla.\n"
+"        </p>\n"
+"      "
+
+#. module: account_remises
+#: view:scev.remise:0
+#: field:scev.remise,move:0
+msgid "Account move"
+msgstr "Mouvements de compte"
+
+#. module: account_remises
+#: field:scev.remise.line,move_id:0
+msgid "Account move line"
+msgstr "Écritures comptables"
+
+#. module: account_remises
+#: field:scev.remise.line,account_id:0
+msgid "Account to credit"
+msgstr "Compte à créditer"
+
+#. module: account_remises
+#: field:scev.remise.line,amount:0
+msgid "Amount"
+msgstr "Montant"
+
+#. module: account_remises
+#: field:scev.remise.line,bank:0
+msgid "Bank name"
+msgstr "Banque"
+
+#. module: account_remises
+#: view:scev.remise:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: account_remises
+#: selection:scev.remise,state:0
+msgid "Cancelled"
+msgstr "Annulée"
+
+#. module: account_remises
+#: code:addons/account_remises/account_remise.py:178
+#, python-format
+msgid "Cheque %i (%)"
+msgstr "Chèque %i (%)"
+
+#. module: account_remises
+#: code:addons/account_remises/account_remise.py:174
+#, python-format
+msgid "Cheque %i (%) - Invoice %"
+msgstr "Chèque %i (%) - Facture %"
+
+#. module: account_remises
+#: code:addons/account_remises/account_remise.py:60
+#, python-format
+msgid "Cheque deposit %"
+msgstr "Remise de chèques %"
+
+#. module: account_remises
+#: field:scev.remise.line,number:0
+msgid "Cheque number"
+msgstr "Numéro du chèque"
+
+#. module: account_remises
+#: field:scev.remise.line,writer:0
+msgid "Cheque writer"
+msgstr "Émetteur"
+
+#. module: account_remises
+#: view:scev.remise:0
+#: field:scev.remise,cheques:0
+msgid "Cheques"
+msgstr "Chèques"
+
+#. module: account_remises
+#: view:scev.remise:0
+msgid "Cheques deposit"
+msgstr "Remise de chèques"
+
+#. module: account_remises
+#: model:ir.actions.act_window,name:account_remises.action_account_remise_tree
+#: model:ir.ui.menu,name:account_remises.menu_account_remise_tree
+msgid "Cheques deposits"
+msgstr "Remises de chèques"
+
+#. module: account_remises
+#: view:scev.remise:0
+msgid "Confirm deposit"
+msgstr "Confirmer la remise"
+
+#. module: account_remises
+#: selection:scev.remise,state:0
+msgid "Confirmed"
+msgstr "Confirmée"
+
+#. module: account_remises
+#: field:scev.remise,create_uid:0
+#: field:scev.remise.line,create_uid:0
+msgid "Created by"
+msgstr "Crée par"
+
+#. module: account_remises
+#: field:scev.remise,create_date:0
+#: field:scev.remise.line,create_date:0
+msgid "Created on"
+msgstr "Créée le"
+
+#. module: account_remises
+#: field:scev.remise,user:0
+msgid "Creator"
+msgstr "Créateur"
+
+#. module: account_remises
+#: field:scev.remise,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: account_remises
+#: field:scev.remise.line,remise_id:0
+msgid "Deposit"
+msgstr "Remise"
+
+#. module: account_remises
+#: selection:scev.remise,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: account_remises
+#: field:scev.remise,id:0
+#: field:scev.remise.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_remises
+#: field:scev.remise.line,invoice_id:0
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: account_remises
+#: field:scev.remise,journal:0
+msgid "Journal"
+msgstr "Journal"
+
+#. module: account_remises
+#: field:scev.remise,write_uid:0
+#: field:scev.remise.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: account_remises
+#: field:scev.remise,write_date:0
+#: field:scev.remise.line,write_date:0
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: account_remises
+#: field:scev.remise,period:0
+msgid "Period"
+msgstr "Période"
+
+#. module: account_remises
+#: selection:scev.remise,state:0
+msgid "Reconciled"
+msgstr "Lettrée"
+
+#. module: account_remises
+#: field:scev.remise,ref:0
+msgid "Reference"
+msgstr "Référence"
+
+#. module: account_remises
+#: field:scev.remise,state:0
+msgid "Status"
+msgstr "État"
