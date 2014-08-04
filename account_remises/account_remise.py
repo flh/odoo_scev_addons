@@ -22,7 +22,8 @@ class remise(models.Model):
             readonly=True, states={'draft': [('readonly', False)]},
             domain=[('type', '=', 'cash')])
 
-    move = fields.Many2one('account.move', string="Account move", required=True)
+    move = fields.Many2one('account.move', string="Account move",
+            required=False)
 
     period = fields.Many2one('account.period', string="Period", required=True,
             readonly=True, states={'draft': [('readonly', False)]})
@@ -38,12 +39,16 @@ class remise(models.Model):
 
     state = fields.Selection([ ('draft','Draft'),
         ('confirmed','Confirmed'), ('reconciled','Reconciled'),
-        ('cancelled','Cancelled')], 'Status', readonly=True)
+        ('cancelled','Cancelled')], 'Status', readonly=True,
+        default=lambda self: 'draft')
 
     @api.one
     @api.depends('cheques')
     def _compute_amount(self):
-        self.amount = sum([c.amount for c in self.cheques])
+        if self.cheques:
+            self.nb_cheques = sum([c.amount for c in self.cheques])
+        else:
+            self.nb_chques = 0
 
     @api.one
     @api.depends('cheques')
