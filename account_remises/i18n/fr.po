@@ -47,13 +47,11 @@ msgid "Account to credit"
 msgstr "Compte à créditer"
 
 #. module: account_remises
-#: view:scev.remise:0
 #: field:scev.remise.line,amount:0
 msgid "Amount"
 msgstr "Montant"
 
 #. module: account_remises
-#: view:scev.remise:0
 #: field:scev.remise.line,amount:0
 msgid "Number of cheques"
 msgstr "Nombre de chèques"
