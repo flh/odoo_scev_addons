@@ -44,7 +44,21 @@
         </form>
       </field>
     </record>
-    
+
+    <record id="" model="ir.ui.view">
+      <field name="name=">scev.remise.tree</field>
+      <field name="model">scev.remise</field>
+      <field name="arch" type="xml">
+        <tree colors="blue:state=='draft';black:state=='reconciled';green:state=='confirmed';gray:state=='cancelled'">
+          <field name="date"/>
+          <field name="ref"/>
+          <field name="nb_cheques"/>
+          <field name="amount"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
     <record id="action_account_remise_tree" model="ir.actions.act_window">
       <field name="name">Cheques deposits</field>
       <field name="res_model">scev.remise</field>
